@@ -4,7 +4,9 @@ This is a simple demo showing how to spinning up an aws instance on EC2 with Jen
 
 ![network structure](images/network.png)
 
-It's possible to converted this into a cluster by adding ASG and ELB.
+From here, you can further:
+* converted this into a cluster by adding ASG and ELB. 
+* use templating tool such as Packer to create an AMI and save on S3, then provision with terraform
 
 ### Tools used in this project
 
@@ -30,6 +32,7 @@ We need install `go` and `terraform`:
 
 Please refer to `modules/ec/run.sh`. 
 
+* To initialize, use `run.sh init`.
 * To apply, use `run.sh apply`. When finish, it should print the dns of the jenkins server. You can copy and paste that to browser, e.g., http://ec2-12-34-56-78.compute-1.amazonaws.com:8080. The default user is `alexli`, and password is `password`. 
 * To destroy(do NOT forget), use `run.sh destroy`
 

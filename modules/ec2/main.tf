@@ -79,7 +79,7 @@ resource "aws_route_table_association" "jenkins-rta-subnet1" {
 
 resource "aws_security_group" "jenkins-sg" {
   name = "Jenkins group"
-  description = "Allow SSH inbound"
+  description = "Allow SSH/HTTP"
   vpc_id = "${aws_vpc.jenkins-vpc.id}"
   ingress {
     from_port = 22
